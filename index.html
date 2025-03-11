@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposta de Serviço - Engenheiro Civil</title>
+  <style>
+    /************************************************
+      MANTEMOS O TEXTO COMO ESTÁ E ALTERAMOS APENAS
+      O CSS E A ORGANIZAÇÃO DOS BOTÕES NO TOPO
+    ************************************************/
+
+    /* Reset e Transições Suaves */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* ===========================================================
+       BODY COM GRADIENTE NO MODO CLARO
+    =========================================================== */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      background: linear-gradient(120deg, #cfd9df 0%, #e2ebf0 100%);
+      color: #333;
+      min-height: 100vh;
+    }
+
+    /* ===========================================================
+       CONTAINER PRINCIPAL (GLASSMORPHISM)
+    =========================================================== */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
+      animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===========================================================
+       TOPO COM BOTÕES (MODO CLARO/ESCURO + BAIXAR PDF)
+    =========================================================== */
+    .top-bar {
+      display: flex;
+      justify-content: center;  /* centraliza tudo no meio */
+      align-items: center;
+      gap: 10px;                /* espaço entre botões */
+      padding: 20px;
+      background: rgba(30, 30, 30, 0.8);
+    }
+
+    .top-bar button, .top-bar a {
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none; /* remove sublinhado do link */
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .top-bar button:hover, .top-bar a:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background-color: #607d8b; /* Cinza puxando pro azul */
+    }
+    .btn-light:hover {
+      background-color: #546e7a;
+    }
+    .btn-dark {
+      background-color: #212121;
+    }
+    .btn-dark:hover {
+      background-color: #000;
+    }
+
+    /* ===========================================================
+       TÍTULOS E LISTAS
+    =========================================================== */
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 1.6rem;
+      color: #222;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    h2 {
+      font-size: 17px;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+      text-align: justify;
+    }
+    li {
+      margin-bottom: 0.6rem;
+      list-style-type: disc;
+      text-align: justify;
+    }
+
+    /* ===========================================================
+       MODO ESCURO
+    =========================================================== */
+    body.dark-mode {
+      background: linear-gradient(120deg, #434343 0%, #000000 100%) !important;
+      color: #f9f9f9 !important;
+    }
+    body.dark-mode .top-bar {
+      background: rgba(0, 0, 0, 0.8) !important;
+    }
+    body.dark-mode .btn-light {
+      background-color: #777 !important;
+      color: #fff !important;
+    }
+    body.dark-mode .btn-dark {
+      background-color: #111 !important;
+    }
+    body.dark-mode .container {
+      background: rgba(43, 43, 43, 0.8) !important;
+      box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1) !important;
+      backdrop-filter: blur(8px);
+    }
+    body.dark-mode h1 {
+      color: #eee !important;
+    }
+    body.dark-mode h2 {
+      color: #ccc !important;
+    }
+    body.dark-mode li {
+      list-style-type: circle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Faixa superior com TODOS os botões centralizados -->
+  <div class="top-bar">
+    <button class="btn-light" onclick="lightMode()">Modo Claro</button>
+    <button class="btn-dark" onclick="darkMode()">Modo Escuro</button>
+
+    <!-- Baixar Página em PDF -->
+    <button class="btn-light" onclick="downloadPDFPage()">Baixar Página em PDF</button>
+
+    <!-- Baixar Arquivo PDF (Atenção ao nome real do arquivo) -->
+    <!-- Se seu arquivo PDF estiver na mesma pasta, coloque o mesmo nome aqui em href -->
+    <a href="PROPOSTA  - MATHEUS.docx.pdf" class="btn-dark" download>Baixar Arquivo PDF</a>
+  </div>
+
+  <!-- Conteúdo principal (HTML inalterado) -->
+  <div class="container">
+    <h1>PROPOSTA PARA PRESTAÇÃO DE SERVIÇOS</h1>
+
+    <p><strong>Recife, 11 de Março de 2025</strong></p>
+    <p><strong>À NORCONSULT (Att . Drº Ricardo)</strong></p>
+
+    <p>Prezado Senhor,</p>
+    <p>Atendendo a solicitação de Vsa, estamos apresentando proposta para prestação de serviços na seguinte forma:</p>
+
+    <h2>1 - Objetivo</h2>
+    <p>
+      Esta proposta tem como objetivo, a realização de inspeções em 27 (vinte e sete) obras de artes especiais na rodovia BR-222/CE – trecho: Fortaleza (Avenida Bezerra de Menezes) – div. CE/PI.<br><br>
+      As obras de artes especiais contempladas para esta proposta são objetos dos seguimentos 01 e 03. Estão contempladas 13 OAE’s para o seguimento 01 e 14 (Quatorze) OAE’s para o seguimento 03.<br><br>
+      As inspeções serão realizadas conforme a nota DNIT 010/2024 – PRO, complementada, se necessário, pela norma ABNT NBR 9452 e pela literatura existente sobre o tema técnico.
+    </p>
+
+    <h2>2 - Descrição dos Serviços que Serão Realizados</h2>
+    <ul>
+      <li>Inspeção das obras por engenheiro especialista em projeto, inspeção e recuperação de Obras de Arte Especiais, acompanhado por um assistente técnico devidamente qualificado.</li>
+      <li>Preenchimento das Fichas de Inspeção do Anexo “A” (páginas 10 a 15) da norma DNIT 010/2004 PRO.</li>
+      <li>Levantamento da geometria existente de cada obra e elaboração dos desenhos dos esquemas longitudinal e transversal previstos no Anexo “A” (página 12) da norma DNIT 010/2004-PRO.</li>
+      <li>Preenchimento do Anexo “B” (nota técnica) da norma DNIT 010/2004-PRO.</li>
+      <li>Desenho do levantamento da geometria existente (cortes longitudinal e transversal e vista superior) de todas as Obras em Cad no formato “A1” com o mapeamento das manifestações patológicas identificadas em cada obra.</li>
+      <li>Relatório da inspeção de cada obra acompanhado de documentário fotográfico, contendo descrição das patologias observadas, complementando as informações da ficha do Anexo “B”. Também constará do Relatório um diagnóstico preliminar sobre as condições de estabilidade de cada obra, com o indicativo das intervenções que deverão ser realizadas, para a recuperação/reforço ou para a substituição no caso de as condições estruturais se mostrarem precárias.</li>
+    </ul>
+
+    <h2>3 - Custos dos Serviços</h2>
+    <p>
+      R$ 168.298,56 (Cento e sessenta e oito mil, duzentos e noventa e oito reais e cinquenta e seis centavos). Este valor contempla todas as despesas que forem necessárias para a realização do serviço, inclusive impostos, conforme o demonstrativo dos custos, anexo a esta proposta.
+    </p>
+
+    <h2>4 - Forma de Pagamento</h2>
+    <p>
+      40% na aprovação da proposta, para viabilizar os custos de mobilização e deslocamento da equipe de inspeção. 60% na entrega dos relatórios de inspeção das 27 OAE’s.
+    </p>
+
+    <h2>5 - Prazo de Entrega</h2>
+    <p>
+      Todo o trabalho, incluindo as etapas de campo e escritório, serão entregues no prazo de 75 (setenta e cinco) dias.
+    </p>
+
+    <p><strong>Atenciosamente,</strong></p>
+    <p><strong>Marcos Antonio da Silva</strong><br>
+    Engenheiro Civil - CREA 027796-D/PE</p>
+  </div>
+
+  <script>
+    /* Modo Claro/Escuro */
+    function darkMode() {
+      document.body.classList.add('dark-mode');
+    }
+    function lightMode() {
+      document.body.classList.remove('dark-mode');
+    }
+
+    /* Botão para baixar a página em PDF (via print) */
+    function downloadPDFPage() {
+      window.print();
+    }
+  </script>
+</body>
+</html>
